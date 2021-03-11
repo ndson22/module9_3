@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <label>Chi so can nang: <input type="number" id="weight"></label>
+    <label>Chi so chieu cao (m): <input type="number" id="height"></label>
+    <button type="button" id="bmiCal">Calculator BMI</button>
+    <script>
+        document.getElementById("bmiCal").addEventListener('click',bmiCal);
+        function bmiCal()
+        {
+            let weight = parseFloat(document.getElementById("weight").value);
+            let height = parseFloat(document.getElementById("height").value);
+            let bmi = weight / (height * height);
+            if (bmi < 18.5) {
+                alert('Underweight');
+            } else if (bmi >= 18.5 && bmi < 25) {
+                alert('Normal')
+            } else if (bmi >= 25 && bmi < 30) {
+                alert('Overweight');
+            } else alert('Obese');
+        }
+    </script>
+</body>
+</html>
